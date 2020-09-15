@@ -7,10 +7,10 @@ import (
 
 func main() {
 	cli := new(manager.ClientManager)
-	values, err := cli.ListContainer()
+	entity, err := cli.GetContainerByName("my_nginx")
 	if err != nil {
-		fmt.Printf("error:%v", err.Error())
+		fmt.Printf(err.Error())
 		return
 	}
-	fmt.Println(values)
+	fmt.Println(entity)
 }
